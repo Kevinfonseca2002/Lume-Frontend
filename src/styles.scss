@@ -1,1 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family:"Bebas_Neue";
+  src: url("./assets/styles/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Berkshire_Swash";
+  src: url("./assets/styles/fonts/Berkshire_Swash/BerkshireSwash-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"Black_Han_Sans";
+  src: url("./assets/styles/fonts/Black_Han_Sans/BlackHanSans-Regular.ttf")format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Carlito";
+  src: url("./assets/styles/fonts/Carlito/Carlito-Bold.ttf")format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Carlito";
+  src: url("./assets/styles/fonts/Carlito/Carlito-BoldItalic.ttf")format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Carlito";
+  src: url("./assets/styles/fonts/Carlito/Carlito-Italic.ttf")format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Carlito";
+  src: url("./assets/styles/fonts/Carlito/Carlito-Regular.ttf")format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dancing_Script";
+  src: url("./assets/styles/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf")format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("./assets/styles/fonts/Oswald/Oswald-VariableFont_wght.ttf")format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"Quattrocento";
+  src: url("./assets/styles/fonts/Quattrocento/Quattrocento-Bold.ttf")format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+font-family:"Quattrocento";
+  src: url("./assets/styles/fonts/Quattrocento/Quattrocento-Regular.ttf")format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"Rethink_Sans";
+  src: url("./assets/styles/fonts/Rethink_Sans/RethinkSans-Italic-VariableFont_wght.ttf")format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/styles/fonts/Roboto/Roboto-Italic-VariableFont_wdth\,wght.ttf")format("truetype");
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+@font-face {
+  font-family: "Roboto_Condensed";
+  src: url("./assets/styles/fonts/Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf")format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+
+

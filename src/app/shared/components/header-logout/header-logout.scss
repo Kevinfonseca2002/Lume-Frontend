@@ -1,0 +1,44 @@
+//HEADER OVERALL
+.header {
+  display: grid;
+  grid-template-columns:35% 65%;
+  grid-template-rows: 100%;
+  background-color: #A4D4FF;
+  height: 20%;
+}
+
+//LOGO HEADER
+
+.logo-box {
+  height: 100%;
+  width: 100%;
+  grid-column: 1/2 ;
+  grid-row:1
+}
+
+.logo-box img {
+  height: 100%;
+  width: 100%;
+  object-fit:contain;
+}
+
+
+//NAV BAR
+
+.nav-bar a{
+  font-size: 25px;
+  color: black;
+  margin-left: 50px;
+  text-decoration: none;
+  font-family: "Roboto";
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.nav-bar {
+  margin-right: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: end;
+  align-items: center;
+}

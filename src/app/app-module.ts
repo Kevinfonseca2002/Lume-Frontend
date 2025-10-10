@@ -6,14 +6,12 @@ import { App } from './app';
 import { CommonModule } from '@angular/common'; //Nos permite utilizar los modelos "NGMODELS no modulos" externos
 import { FormsModule } from '@angular/forms';
 import { PagesModule } from './features/auth/pages/pages-module';
-import { Home } from './home/pages/home/home';
 import { SharedModule } from './shared/shared-module';
+import { LumeModule } from './home/pages/lume-module';
 
 @NgModule({
   declarations: [
     App,
-    Home,
-
   ],
   imports: [
     BrowserModule,
@@ -21,7 +19,8 @@ import { SharedModule } from './shared/shared-module';
     CommonModule,
     FormsModule,
     PagesModule,
-    SharedModule
+    SharedModule,
+    LumeModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

@@ -1,0 +1,109 @@
+body {
+  background-color: #0088FF;
+}
+
+//LOGO LUME
+
+.logo {
+  height: 20%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit:contain;
+}
+
+//LOGIN BOXES
+
+.login-container{
+  display: flex;
+  height: 68%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: start;
+  margin-top: 0;
+}
+
+.login-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#A2D4FF;
+  border: solid black 2px;
+  border-radius: 25px;
+  width: 220px;
+  height: 300px;
+  padding: 15px
+  ;
+
+}
+//Label managment
+
+.form-group {
+  position: relative; //los objetos que esten absolute dentro de esta caja se puede mover libremente dentro de esta caja mas no toda la pagina
+}
+
+.form-group label{
+  font-family:"Black_Han_Sans";
+  font-size: 18px;
+  color: #ffffff;
+  -webkit-text-stroke: #000000 0.8px;
+  position: absolute; //permite moverlo libremente
+  top: 10px;
+
+}
+.form-group input{
+  border-radius: 50px;
+  width: 200px;
+  height: 25px;
+  margin-top: 35px;
+  padding-left:8px ;
+}
+
+
+
+//FUENTES
+
+h1 {
+  font-family: "Berkshire_Swash";
+  font-size: 40px;
+}
+
+//BOTON
+
+button p {
+  font-size: larger;
+  color: #ffffff;
+  margin: 0;
+  -webkit-text-stroke: #000000 0.9px;
+}
+
+
+button {
+  font-family: "Oswald";
+  font-size: 17px;
+  background-color: #FF5A5D;
+  border-radius: 25px;
+  border: solid black 1.5px;
+  padding: 5px 10px;
+  color: black;
+  margin-top: 30px;
+
+}
+
+.buttonbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
