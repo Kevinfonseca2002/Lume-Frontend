@@ -1,0 +1,81 @@
+//CARROUSEL
+  //IMAGEN
+.main-img{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 40% 58%;
+  grid-template-rows: 100%;
+
+}
+
+.gif{
+  // border-radius: 25px;
+  // border: solid black;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.gif ul{
+  display: flex;
+  padding: 0;
+  width: 600%;
+  animation: slide 20s infinite alternate ease-in-out;
+}
+
+.gif li{
+  width: 100%;
+  list-style: none;
+  position: relative;
+}
+
+.gif img{
+  width: 100%;
+  height: 45%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+@keyframes slide{
+  0% {margin-left: 0;}
+  13%{margin-left: 0;}
+
+  16%{margin-left: -100%;}
+  29%{margin-left: -100%;}
+
+  32%{margin-left: -200%;}
+  45%{margin-left: -200%;}
+
+  48%{margin-left: -300%;}
+  61%{margin-left: -300%;}
+
+  64%{margin-left: -400%;}
+  80%{margin-left: -400%;}
+
+  85%{margin-left: -500%;}
+  100%{margin-left: -500%;}
+
+}
+
+  //TEXTO
+
+.gif-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  padding: 20px;
+
+}
+
+.gif-text p{
+  text-align: center;
+  font-size: 60px;
+  font-family:"Black_Han_Sans";
+  flex-wrap: wrap;
+}
+
+

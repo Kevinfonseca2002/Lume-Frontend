@@ -14,6 +14,8 @@ export class Signup {
   password="";
   storeoruser="";
 
+  onsubmit(){}
+
 
 
 }
