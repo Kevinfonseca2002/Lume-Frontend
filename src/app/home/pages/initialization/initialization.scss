@@ -1,0 +1,149 @@
+
+
+//LOGO
+
+.logo {
+  height: 25%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit:contain;
+}
+
+//TEXT
+.text{
+  margin-left: 170px;
+}
+
+.text h1{
+  font-family:"Black_Han_Sans";
+  font-size: 40px;
+  margin-bottom: 2px;
+  margin-top: 0;
+}
+.text p{
+  font-family:"Rethink_Sans";
+  padding-left: 30px;
+  font-size: 30px;
+  font-style: normal;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+//PICTURES BOX
+
+.picturessection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: solid black;
+  border-radius: 10px;
+  width: 40%;
+  height: 300px;
+  margin-top: 30px;
+  background-color: #FFB9B9;
+}
+
+.picture-box{
+  color: #ffffff;
+  -webkit-text-stroke:#000000 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-family: "Bitter";
+  width: 25%;
+  height: 40%;
+  border: solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+//ABOUT YOU SECTION
+
+.aboutyou{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.aboutyou-box {
+  width: 50%;
+  height: 280px;
+  border-radius: 15px;
+  background-color: #A2D4FF;
+  padding-left: 40px;
+}
+
+.aboutyou-box h2{
+  font-family:"Rethink_Sans";
+  font-style: normal;
+}
+
+.form-item input {
+  width: 80%;
+  height: 20px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+.form-item2 input {
+  width: 80%;
+  height: 60px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+
+.aboutyou form{
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.aboutyou-box label {
+  text-align: end;
+  margin-right: 10px;
+  font-family:"Rethink_Sans_Thin"
+
+}
+
+//BACKROUND TRIANGULE
+
+.triangulo-top{
+  position:absolute;
+  left: -300px;
+  width: 0;
+  height: 0;
+  border-left: 300px solid transparent;
+  border-right: 300px solid transparent;
+  border-bottom: 300px solid #A9D7FF;
+  transform: rotate(180deg);
+}
+
+.triangulo-bottom{
+  position:fixed;
+  right: -300px;
+  bottom: -100px;
+  width: 0;
+  height: 0;
+  border-left: 300px solid transparent;
+  border-right: 300px solid transparent;
+  border-bottom: 300px solid #FFB9B9;
+  transform: rotate(135deg);
+}
+
