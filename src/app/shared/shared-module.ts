@@ -14,6 +14,8 @@ import { HeaderLogout } from './components/header-logout/header-logout';
   imports: [
     CommonModule
   ],
-  exports: [HeaderLogout]
+  exports: [HeaderLogout,
+            Header
+  ]
 })
 export class SharedModule { }

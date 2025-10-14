@@ -1,5 +1,75 @@
-header{
+//HEADER BACKROUND AND GRID
+
+.header{
+  display: flex;
+  background-color: #A4D4FF;
+  height: 20%;
   background-image: url(../../../../assets/images/Header_Backround.png);
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
 }
+
+//LOGO HEADER
+
+.logo{
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  width: 25%;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit:contain;
+}
+
+//NAV MENU
+
+.menu a {
+  font-size: 30px;
+  margin-left: 30px;
+  text-decoration: none;
+  font-family: "Roboto_Condensed";
+  color: #000000;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+}
+
+//SEARCHBAR
+
+.double_input input, select{
+height: 35px;}
+
+.double_input input{
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-right-color: rgba(0,0,0,0);
+  margin-right: 0;
+  width: 240px;
+}
+
+
+.double_input select {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-color: #000000;
+  width: 180px;
+}
+
+.double_input {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  width: 35%;
+}
+
+
+
