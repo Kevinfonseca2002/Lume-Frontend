@@ -1,0 +1,46 @@
+
+
+.profile{
+  display:grid;
+  grid-template-columns: 55% 45%;
+  grid-template-rows:100%;
+  height: 100%;
+}
+.Info h2{
+  font-family:"Black_Han_Sans";
+  font-size:30px
+}
+
+//////IMGS/////////////
+
+.images-box{
+  display:flex;
+  justify-content:center;
+  align-items:center
+}
+
+.images{
+  border-radius:25px;
+  border: solid black;
+  height: 97%;
+  width: 80%
+}
+
+
+//////////CAJASINFO/////
+
+.overall-info{
+  height:30%;
+  width: 90%;
+  margin-bottom: 5%;
+  border: solid black;
+  border-radius:25px
+}
+
+.description{
+  height: 50%;
+  width: 90%;
+  margin-bottom: 5%;
+  border: solid black;
+  border-radius:25px
+}

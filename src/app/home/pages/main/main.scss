@@ -1,5 +1,10 @@
-//TITULO Y BOXES
+body {
+  height: 100vh;
+  width: 100vw
+}
 
+//TITULO Y BOXES
+  ///////////////////////EVENTOS//////////////////
 .fondorojo{
   position: absolute;
   background-color: #FFB9B9;
@@ -28,6 +33,61 @@ h2 {
   font-family:"Black_Han_Sans";
   font-size: 83px;
 }
+
+  ////////////////CATEGORIES/////////////////////////
+.fondorojoC{
+  position: absolute;
+  background-color: #FFB9B9;
+  height: 80px;
+  top: 900px;
+  width: 200px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius:25px;
+  padding-left: 20px;
+
+
+}
+.fondoazulC{
+  position: absolute;
+  background-color: #A2D4FF;
+  height: 80px;
+  top: 1000px;
+  width: 350px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius:25px;
+  padding-left: 20px;
+}
+
+ ////////////////GRUPOS//////////////////////
+
+.fondorojoG{
+  position: absolute;
+  background-color: #FFB9B9;
+  height: 80px;
+  top: 1600px;
+  width: 200px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius:25px;
+  padding-left: 20px;
+
+
+}
+.fondoazulG{
+  position: absolute;
+  background-color: #A2D4FF;
+  height: 80px;
+  top: 1700px;
+  width: 300px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius:25px;
+  padding-left: 20px;
+}
+
+.fondoazulG .title{
+  width: 170%;
+}
+
+
 
 // CARROUSELL EVENTOS
 
