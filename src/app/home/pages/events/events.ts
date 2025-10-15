@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+interface Event {
+
+
+}
+
 
 @Component({
   selector: 'app-events',
@@ -7,5 +14,12 @@ import { Component } from '@angular/core';
   styleUrl: './events.scss'
 })
 export class Events {
+
+  loading=true;
+  events: Events[]=[];
+
+  ngOnInit(){
+
+  }
 
 }

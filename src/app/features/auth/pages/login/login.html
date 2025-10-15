@@ -7,7 +7,8 @@
     <div class="login-card">
       <h1>Login</h1>
 
-      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+      <form *ngIf="!isLoggedIn; else loading" (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -35,6 +36,10 @@
         <button type="submit" [disabled]="loginForm.invalid"><p>Continue</p></button>
         </div>
       </form>
+
+      <ng-template #loading >
+        <p class="loggedin">Loader</p>
+      </ng-template>
     </div>
   </div>
 </body>

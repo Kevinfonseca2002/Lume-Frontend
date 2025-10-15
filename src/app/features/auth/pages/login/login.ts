@@ -12,26 +12,26 @@ export class Login { //La clase es necesaria
 
   email= ""; //Parametro de la clase
   password="";//Parametro de la clase
+  isLoggedIn=false;
 
   constructor( //injecta cosas fuera de la clase, que fue importado.
     private router: Router,
     private authService:AuthService
   ){}
-
   onSubmit(){ //Envia informacion, si no esta  un campo lleno, ejecuta alert
-    if(!this.email||!this.password){
-      alert("Please fill up every empty field.")
-      return;
-    }
 
-  const ok = this.authService.loginMock(this.email, this.password); //this lo usamos para utilizar  las clases externas, si no lo colocamos es como darle ese valor pero sin utilizar
+  const ok = this.authService.loginMock(this.email, this.password); // Provee al constructor con la informacion que traemos con ngModel "email, password" y esta la valida con el methodo de loginMock y este returna booleano
 
   if(ok){
-    this.router.navigate(["/home"]); //
+    this.isLoggedIn=true;
+    this.router.navigate(["/main"]); //
   }else{
     alert("Credenciales invalidas")
   }
   }
-
+  logout(){
+    this.authService.logout();
+    this.isLoggedIn=false
+  }
 
 }

@@ -7,6 +7,8 @@ export class AuthService {
 
   private readonly KEY = "auth_token_demo";
 
+  //////LOGIN/////////////////////
+
   loginMock(email: string, password: string): boolean {
     const sucess= !!email && !!password; //if there is email and password(!!thereis)
 
@@ -25,6 +27,18 @@ export class AuthService {
   isLoggedIn(): boolean{
     return !!localStorage.getItem(this.KEY)
     //Esta logeado? va y mira en el local storage si esta el token, si si, esta logeado, si no, not logged in y depende de la expiracion del token
+  }
+
+  ///////////SIGNUP/////////////////////////
+
+  signUpChecker(name: string, address:string, email: string, password: string, storeOrUser: string):boolean{
+    const creation = !!name && !!address && !!email &&!!password &&!!storeOrUser
+
+    if(creation){
+      localStorage.setItem(this.KEY, "token")
+    }
+    return creation;
+
   }
 
 }
