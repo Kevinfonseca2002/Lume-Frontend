@@ -1,0 +1,153 @@
+.eventscard,
+.eventscard * {
+  box-sizing: border-box;
+}
+.eventscard {
+  position: relative;
+}
+.pipe1 {
+  background: linear-gradient(to top, #d6a2e37d, #a2d4ff);
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 266px;
+  top: 326px;
+}
+.pipe2 {
+  background: linear-gradient(to top, #fb9d5f6f, #ffb9b9);
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 330px;
+  top: 326px;
+}
+.pipe3 {
+  background: linear-gradient(to top, #d6a2e37d, #a2d4ff);
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 397px;
+  top: 326px;
+}
+.pipe4 {
+  background: linear-gradient(to top, #d6a2e37d, #a2d4ff);
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 533px;
+  top: 326px;
+}
+.pipe5 {
+  background: linear-gradient(to top, #fb9d5f6f, #ffb9b9);
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 467px;
+  top: 326px;
+}
+.pipe6 {
+  background: linear-gradient(to top, #d6a2e37d, #a2d4ff);
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 130px;
+  top: 326px;
+}
+.pipe7 {
+  background: linear-gradient(to top, #fb9d5f6f, #ffb9b9);
+
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 199px;
+  top: 326px;
+}
+.pipe8 {
+  background: linear-gradient(to top, #fb9d5f6f, #ffb9b9);
+  border-radius: 28px;
+  width: 50px;
+  height: 169px;
+  position: absolute;
+  left: 60px;
+  top: 326px;
+}
+.image {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #0d0c0c;
+  border-width: 1px;
+  width: 669px;
+  height: 370px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  object-fit: cover;
+}
+.calendario {
+  color: #000000;
+  text-align: center;
+  font-family: "Berkshire_Swash";
+  font-size: 35px;
+  font-weight: 400;
+  position: absolute;
+  left: 86px;
+  top: 428px;
+  width: 490px;
+  height: 47px;
+}
+.eventname {
+  color: #000000;
+  text-align: center;
+  font-family: "Roboto_Condensed";
+  font-size: 45px;
+  font-weight: 900;
+  font-style: italic;
+  position: absolute;
+  left: 100px;
+  top: 379px;
+  width: 459px;
+  height: 63px;
+}
+.dot1 {
+  background: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 19px;
+  height: 17px;
+  position: absolute;
+  left: 299px;
+  top: 342px;
+}
+.dot2 {
+  background: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 18px;
+  height: 17px;
+  position: absolute;
+  left: 337px;
+  top: 342px;
+}
+.dot3 {
+  background: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 18px;
+  height: 17px;
+  position: absolute;
+  left: 373px;
+  top: 342px;
+}

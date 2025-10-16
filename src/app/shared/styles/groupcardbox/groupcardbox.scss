@@ -1,0 +1,69 @@
+//////////IMGS STYLES//////////
+
+.group,
+.group * {
+  box-sizing: border-box;
+}
+.group {
+  position: relative;
+}
+.linea1 {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 274px;
+  height: 221px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  object-fit: cover;
+}
+.linea2 {
+  background: rgba(217, 217, 217, 1);
+  width: 229px;
+  height: 42px;
+  position: absolute;
+  left: 274px;
+  top: 81px;
+}
+.linea3 {
+  background: rgba(217, 217, 217, 1);
+  width: 229px;
+  height: 43px;
+  position: absolute;
+  left: 274px;
+  top: 143px;
+}
+.linea4 {
+  background: rgba(217, 217, 217, 1 );
+  width: 229px;
+  height: 43px;
+  position: absolute;
+  left: 274px;
+  top: 17px;
+}
+.groupname {
+  color: #000000;
+  text-align: center;
+  font-family: "Roboto_Condensed";
+  font-size: 65px;
+  font-weight: 400;
+  position: absolute;
+  left: 273px;
+  top: 17px;
+  width: 234px;
+  height: 92px;
+}
+.city {
+  color: #000000;
+  text-align: center;
+  font-family: "Berkshire_Swash";
+  font-size: 40px;
+  font-weight: 400;
+  position: absolute;
+  left: 273px;
+  top: 112px;
+  width: 234px;
+  height: 93px;
+}
