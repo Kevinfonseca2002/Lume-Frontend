@@ -5,6 +5,9 @@ import { Footer } from './components/footer/footer';
 import { HeaderLogout } from './components/header-logout/header-logout';
 import { Eventscardbox } from './styles/eventscardbox/eventscardbox';
 import { Groupcardbox } from './styles/groupcardbox/groupcardbox';
+import { Categorycard } from './styles/categorycard/categorycard';
+import { Newgroupscard } from './styles/newgroupscard/newgroupscard';
+import { AppRoutingModule } from "../app-routing-module";
 
 
 
@@ -15,15 +18,20 @@ import { Groupcardbox } from './styles/groupcardbox/groupcardbox';
     HeaderLogout,
     Eventscardbox,
     Groupcardbox,
+    Categorycard,
+    Newgroupscard,
   ],
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    AppRoutingModule
+],
   exports: [HeaderLogout,
             Header,
             Footer,
             Eventscardbox,
-            Groupcardbox
+            Groupcardbox,
+            Categorycard,
+            Newgroupscard
   ]
 })
 export class SharedModule { }
