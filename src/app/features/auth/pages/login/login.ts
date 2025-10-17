@@ -18,6 +18,15 @@ export class Login { //La clase es necesaria
     private router: Router,
     private authService:AuthService
   ){}
+
+  ngOnInit(){
+    const loggedIn = this.authService.isLoggedIn();
+    if(loggedIn){
+      this.isLoggedIn=true;
+      this.router.navigate(["/main"]);
+    }
+  }//Cuando el componente se inicia, ejecuta esto
+
   onSubmit(){ //Envia informacion, si no esta  un campo lleno, ejecuta alert
 
   const ok = this.authService.loginMock(this.email, this.password); // Provee al constructor con la informacion que traemos con ngModel "email, password" y esta la valida con el methodo de loginMock y este returna booleano
@@ -29,7 +38,7 @@ export class Login { //La clase es necesaria
     alert("Credenciales invalidas")
   }
   }
-  logout(){
+  logout(){ //Falta boton de logout en el html
     this.authService.logout();
     this.isLoggedIn=false
   }

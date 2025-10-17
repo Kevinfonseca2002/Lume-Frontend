@@ -26,3 +26,185 @@ h2 {
   display:contents;
   font-family:"Black_Han_Sans";
   font-size: 83px;}
+
+/////////////////CARDBOX///////////////////
+.cardgrid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.group-4,
+.group-4 * {
+  box-sizing: border-box;
+}
+.group-4 {
+  position: relative;
+  top: 600px;
+  height: 600px;
+  width: 700px;
+  margin-left: 50px;
+}
+.rectangle-176 {
+  background: linear-gradient(to left, #ffb9b9, #ffb9b9),
+    linear-gradient(to left, #a2d4ff, #a2d4ff);
+  border-radius: 25px;
+  width: 42px;
+  height: 133px;
+  position: absolute;
+  left: 347px;
+  top: 256px;
+}
+.rectangle-79 {
+  background: rgba(217, 217, 217, 0.73);
+  border-radius: 0px 10px 0px 10px;
+  width: 441px;
+  height: 28px;
+  position: absolute;
+  left: 2px;
+  top: 225px;
+}
+.cali {
+  color: #000000;
+  text-align: left;
+  font-family: "Buda-Light", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 225px;
+  width: 344px;
+  height: 37px;
+}
+.rectangle-171 {
+  background: linear-gradient(to left, #a2d4ff, #a2d4ff),
+    linear-gradient(to left, #a2d4ff, #a2d4ff);
+  border-radius: 25px;
+  width: 41px;
+  height: 133px;
+  position: absolute;
+  left: 171px;
+  top: 256px;
+}
+.rectangle-172 {
+  background: linear-gradient(to left, #ffb9b9, #ffb9b9),
+    linear-gradient(to left, #a2d4ff, #a2d4ff);
+  border-radius: 25px;
+  width: 42px;
+  height: 133px;
+  position: absolute;
+  left: 226px;
+  top: 256px;
+}
+.rectangle-173 {
+  background: linear-gradient(to left, #a2d4ff, #a2d4ff),
+    linear-gradient(to left, #a2d4ff, #a2d4ff);
+  border-radius: 25px;
+  width: 42px;
+  height: 133px;
+  position: absolute;
+  left: 287px;
+  top: 256px;
+}
+.rectangle-169 {
+  background: #a2d4ff;
+  border-radius: 25px;
+  width: 42px;
+  height: 133px;
+  position: absolute;
+  left: 58px;
+  top: 256px;
+}
+.rectangle-170 {
+  background: linear-gradient(to left, #ffb9b9, #ffb9b9),
+    linear-gradient(to left, #a2d4ff, #a2d4ff);
+  border-radius: 25px;
+  width: 42px;
+  height: 133px;
+  position: absolute;
+  left: 115px;
+  top: 256px;
+}
+.eventimage {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #0d0c0c;
+  border-width: 1px;
+  width: 452px;
+  height: 292px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.eventimage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dec-25-4-00-pm {
+  color: #000000;
+  text-align: center;
+  font-family: "ScriptMtBold-Regular", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  position: absolute;
+  left: 58px;
+  top: 338px;
+  width: 331px;
+  height: 37px;
+}
+.the-black-swan {
+  color: #000000;
+  text-align: center;
+  font-family: "RobotoCondensed-BlackItalic", sans-serif;
+  font-size: 35px;
+  font-weight: 900;
+  font-style: italic;
+  position: absolute;
+  left: 68px;
+  top: 297px;
+  width: 310px;
+  height: 51px;
+}
+.obra-de-teatro-dedicada-al-arte-simbolico-y-musical {
+  color: #000000;
+  text-align: center;
+  font-family: "RobotoSlab-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 14px;
+  top: 392px;
+  width: 423px;
+  height: 51px;
+}
+.rectangle-185 {
+  background: #ff5a5d;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 0.5px;
+  width: 143px;
+  height: 24px;
+  position: absolute;
+  left: 171px;
+  top: 458px;
+}
+.asistire {
+  color: #ffffff;
+  text-align: center;
+  font-family: "CooperBlack-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 174px;
+  top: 458px;
+  width: 140px;
+  height: 15px;
+  -webkit-text-stroke: 0.20000000298023224px #000000;
+}
