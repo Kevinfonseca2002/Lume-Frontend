@@ -17,6 +17,9 @@ export class PagesService {
   loading = true;
   products!: Products[];
 
+
+//PRODUCTS//////////////////////////
+
   userChecker() {
     setTimeout(() => {
       this.products = [
@@ -73,4 +76,9 @@ export class PagesService {
     }, 2000);
 
 }
+
+//CHATS//////////////////////////////
+
+
 }
+

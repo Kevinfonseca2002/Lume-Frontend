@@ -1,0 +1,137 @@
+//////////////TITLE//////////////////
+
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title1,.title2{
+  align-items: center;
+  text-align: center;
+}
+
+.title1 h2, .title2 h2{
+  display:contents;
+  font-family:"Black_Han_Sans";
+  font-size: 60px;
+}
+
+.title1{
+  background: linear-gradient(to left, #ffb9b9, #ffb9b9),
+  linear-gradient(to left, #a2d4ff, #a2d4ff);
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+  width: 300px;
+  text-align: end;
+  padding-right: 10px;
+}
+
+.title2{
+background: linear-gradient(to left, #a2d4ff, #a2d4ff),
+    linear-gradient(to left, #a2d4ff, #a2d4ff);
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  padding-left: 10px;
+  width: 300px;
+  text-align: start;
+  padding-left: 10px;
+}
+
+.messages{
+  font-family:"Black_Han_Sans";
+  font-size: 30px;
+  margin: 40px 0 40px 40px;
+}
+
+
+
+
+///////////MESSAGESCHATS////////////
+
+
+
+
+
+
+
+
+
+
+
+/////////////CHATS//////////////////
+.chat-list,
+.chat-list * {
+  box-sizing: border-box;
+}
+.chat-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 80px;
+  margin-left: 60px;
+}
+.chat-container {
+  background: #ffb9b9;
+  border-radius: 200px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 457px;
+  height: 62px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.photocontainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.photocontainer{
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 22px;
+  top: 6px;
+}
+
+.name {
+  color: #000000;
+  text-align: left;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 130px;
+  top: 0px;
+  width: 437px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.report {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 378px;
+  top: 12px;
+  object-fit: cover;
+}
+.report img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
