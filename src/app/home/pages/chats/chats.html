@@ -1,34 +1,82 @@
 <app-header></app-header>
 
 <div class="title">
-<div class="title1">
-  <h2>Mis</h2>
-</div>
-<div class="title2">
-  <h2>Chats</h2>
-</div>
+  <div class="title1">
+    <h2>Mis</h2>
+  </div>
+  <div class="title2">
+    <h2>Chats</h2>
+  </div>
 </div>
 
 <div class="messages">
   <h3>Mensajes recientes</h3>
 </div>
+<div class="chatboxarrange">
+  <div *ngIf="loading; else users">Cargando chats.......</div>
 
-<div *ngIf="loading; else users">
-  Cargando chats.......
-</div>
+  <ng-template #users>
+    <section *ngFor="let p of chats" (click)="openChats(p)" class="chat-list">
+      <div class="chat-container"></div>
+      <div class="photocontainer">
+        <img [src]="p.image" />
+      </div>
+      <div class="name">{{ p.name }}</div>
+      <div class="report">
+        <img
+          src="../../../../assets/icons/signo-de-exclamacion.png"
+          alt="reporticon"
+        />
+      </div>
+    </section>
+  </ng-template>
 
-<ng-template #users>
-  <section *ngFor="let p of chats" class="chat-list">
-  <div class="chat-container"></div>
-  <div class="photocontainer">
-    <img [src]="p.image">
+  <div *ngIf="selectedChat" class="chat-popup-overlay" (click)="closeChat()">
+    <div class="chat-popup" (click)="$event.stopPropagation()">
+      <div class="chat-header">
+        <img
+          [src]="selectedChat.image"
+          alt="{{ selectedChat.name }}"
+          class="chat-avatar"
+        />
+        <h2>{{ selectedChat.name }}</h2>
+      </div>
+        <!-- Área de mensajes -->
+        <div class="chat-messages" #messagesContainer>
+          <div *ngIf="messages.length === 0" class="placeholder">
+            Inicia una conversación con {{ selectedChat.name }}
+          </div>
+
+          <div
+            *ngFor="let message of messages"
+            [ngClass]="
+              message.sender === 'user'
+                ? 'message user-message'
+                : 'message other-message'
+            "
+          >
+            <div class="message-bubble">
+              <p>{{ message.text }}</p>
+              <span class="message-time">{{
+                message.timestamp | date : "short"
+              }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Área de entrada de mensajes -->
+        <div class="chat-input-area">
+          <div class="inputbackround">
+          <input
+            type="text"
+            placeholder="Escribe un mensaje..."
+            class="message-input"
+            (keypress)="onKeyPress($event)"
+          />
+          </div>
+          <button (click)="sendMessage()" class="send-btn">➤</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="name">{{p.name}}</div>
-  <div class="report">
-    <img
-      src="../../../../assets/icons/signo-de-exclamacion.png"
-      alt="reporticon"
-    />
-  </div>
-</section>
-</ng-template>
+

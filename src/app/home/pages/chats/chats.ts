@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
-import { timestamp } from 'rxjs';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 interface Chat {
   image: string,
   name: string,
 }
-
 @Component({
   selector: 'app-chats',
   standalone: false,
   templateUrl: './chats.html',
   styleUrl: './chats.scss'
 })
+// @NgModule({
+//   declarations: [],
+//   imports: [ FormsModule],
+//   providers: [],
+// });
 export class Chats {
   loading=true;
   selectedChat:any=null;
