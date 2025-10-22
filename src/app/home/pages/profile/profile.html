@@ -2,13 +2,19 @@
 <section class="profile">
   <div class="images-box">
     <div class="images">
-      <img src="../../../../assets/images/Profile Pictures/pexels-kiyan-mirzaei-2588568-4420634.jpg" alt="myprofile">
+      <img [src]="image" alt="Profile Picture" class="profile-picture" />
     </div>
   </div>
 
-  <div class="Info">
-    <h2>Acerca de {{user()?.name}}</h2>
-    <div class="overall-info"><p>asldkhjaksdhjalskdhj</p></div>
-    <div class="description"><p>haskdjlaslkdhjhsaj</p></div>
+  <div *ngIf="!editOn; else editTemplate" class="Info">
+    <h2>Acerca de {{user}}</h2>
+    <div class="overall-info"><p>{{ciudad}}, {{signo}}, {{personalidad}}, {{interes}}</p></div>
+    <div class="description"><p>{{descripcion}}</p></div>
+
+<button (click)="editProfile()">Edit Profile</button>
   </div>
+
+  <ng-template #editTemplate>
+<button (click)="cancelEdit()">Cancel</button>
+  </ng-template>
 </section>

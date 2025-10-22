@@ -10,27 +10,28 @@
   <div *ngIf="loading; else eventsList">
     <p>Cargando eventos...</p>
   </div>
-  <ng-template class="cardgrid" #eventsList>
-    <div *ngFor="let item of events;" class="group-4">
-      <div class="rectangle-176"></div>
-      <div class="rectangle-79"></div>
-      <div class="cali"></div>
-      <div class="rectangle-171"></div>
-      <div class="rectangle-172"></div>
-      <div class="rectangle-173"></div>
-      <div class="rectangle-169"></div>
-      <div class="rectangle-170"></div>
-      <div class="eventimage">
-        <img [src]="item.imagen" />
+  <ng-template #eventsList>
+    <div class="cardgrid">
+      <div *ngFor="let item of events" class="group-4">
+        <div class="rectangle-176"></div>
+        <div class="rectangle-79"></div>
+        <div class="cali"></div>
+        <div class="rectangle-171"></div>
+        <div class="rectangle-172"></div>
+        <div class="rectangle-173"></div>
+        <div class="rectangle-169"></div>
+        <div class="rectangle-170"></div>
+        <div class="eventimage">
+          <img [src]="item.imagen" />
+        </div>
+        <div class="dec-25-4-00-pm">{{ item.fecha }}</div>
+        <div class="the-black-swan">{{ item.titulo }}</div>
+        <div class="obra-de-teatro-dedicada-al-arte-simbolico-y-musical">
+          {{ item.descripcion }}
+        </div>
+        <div class="buttonbox"></div>
+        <button class="asistire">Asistire</button>
       </div>
-      <div class="dec-25-4-00-pm">{{item.fecha}}</div>
-      <div class="the-black-swan">{{item.titulo}}</div>
-      <div class="obra-de-teatro-dedicada-al-arte-simbolico-y-musical">
-        {{item.descripcion}}
-      </div>
-      <div class="rectangle-185"></div>
-      <div class="asistire">Asistire</div>
     </div>
   </ng-template>
-
 </section>

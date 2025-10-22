@@ -3,7 +3,7 @@
   position: absolute;
   background-color: #FFB9B9;
   height: 80px;
-  top: 300px;
+  top: 170px;
   width: 200px;
   border-top-right-radius: 25px;
   border-bottom-right-radius:25px;
@@ -15,7 +15,7 @@
   position: absolute;
   background-color: #A2D4FF;
   height: 80px;
-  top: 400px;
+  top: 270px;
   width: 350px;
   border-top-right-radius: 25px;
   border-bottom-right-radius:25px;
@@ -32,10 +32,15 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: auto;
   gap: 20px;
   padding: 20px;
   margin-top: 150px;
   margin-bottom: 50px;
+
 }
 
 .group-4,
@@ -44,10 +49,11 @@ h2 {
 }
 .group-4 {
   position: relative;
-  top: 600px;
+  top: 80px;
   height: 600px;
-  width: 700px;
-  margin-left: 50px;
+  width: 549px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 .rectangle-176 {
   background: linear-gradient(to left, #ffb9b9, #ffb9b9),
@@ -56,8 +62,8 @@ h2 {
   width: 42px;
   height: 133px;
   position: absolute;
-  left: 347px;
-  top: 256px;
+  left: 400px;
+  top: 300px;
 }
 .rectangle-79 {
   background: rgba(217, 217, 217, 0.73);
@@ -66,7 +72,7 @@ h2 {
   height: 28px;
   position: absolute;
   left: 2px;
-  top: 225px;
+  top: 300px;
 }
 .cali {
   color: #000000;
@@ -87,8 +93,8 @@ h2 {
   width: 41px;
   height: 133px;
   position: absolute;
-  left: 171px;
-  top: 256px;
+  left: 220px;
+  top: 300px;
 }
 .rectangle-172 {
   background: linear-gradient(to left, #ffb9b9, #ffb9b9),
@@ -97,8 +103,8 @@ h2 {
   width: 42px;
   height: 133px;
   position: absolute;
-  left: 226px;
-  top: 256px;
+  left: 280px;
+  top: 300px;
 }
 .rectangle-173 {
   background: linear-gradient(to left, #a2d4ff, #a2d4ff),
@@ -107,8 +113,8 @@ h2 {
   width: 42px;
   height: 133px;
   position: absolute;
-  left: 287px;
-  top: 256px;
+  left: 340px;
+  top: 300px;
 }
 .rectangle-169 {
   background: #a2d4ff;
@@ -116,8 +122,8 @@ h2 {
   width: 42px;
   height: 133px;
   position: absolute;
-  left: 58px;
-  top: 256px;
+  left: 100px;
+  top: 300px;
 }
 .rectangle-170 {
   background: linear-gradient(to left, #ffb9b9, #ffb9b9),
@@ -126,16 +132,16 @@ h2 {
   width: 42px;
   height: 133px;
   position: absolute;
-  left: 115px;
-  top: 256px;
+  left: 160px;
+  top: 300px;
 }
 .eventimage {
   border-radius: 5px;
   border-style: solid;
   border-color: #0d0c0c;
   border-width: 1px;
-  width: 452px;
-  height: 292px;
+  width: 550px;
+  height: 350px;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -153,8 +159,8 @@ h2 {
   font-size: 22px;
   font-weight: 400;
   position: absolute;
-  left: 58px;
-  top: 338px;
+  left: 105px;
+  top: 380px;
   width: 331px;
   height: 37px;
 }
@@ -162,49 +168,46 @@ h2 {
   color: #000000;
   text-align: center;
   font-family: "RobotoCondensed-BlackItalic", sans-serif;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 900;
   font-style: italic;
   position: absolute;
-  left: 68px;
-  top: 297px;
-  width: 310px;
+  left: 93px;
+  top: 350px;
+  width: 350px;
   height: 51px;
 }
 .obra-de-teatro-dedicada-al-arte-simbolico-y-musical {
   color: #000000;
   text-align: center;
   font-family: "RobotoSlab-Regular", sans-serif;
-  font-size: 20px;
+  font-size: 13px;
   font-weight: 400;
   position: absolute;
-  left: 14px;
-  top: 392px;
+  left: 75px;
+  top: 440px;
   width: 423px;
   height: 51px;
 }
-.rectangle-185 {
+.buttonbox {
+  position: absolute;
+  left: 171px;
+  top: 490px;
+}
+.asistire {
   background: #ff5a5d;
   border-radius: 15px;
   border-style: solid;
   border-color: #000000;
   border-width: 0.5px;
-  width: 143px;
-  height: 24px;
-  position: absolute;
-  left: 171px;
-  top: 458px;
-}
-.asistire {
-  color: #ffffff;
   text-align: center;
   font-family: "CooperBlack-Regular", sans-serif;
   font-size: 20px;
   font-weight: 400;
   position: absolute;
-  left: 174px;
-  top: 458px;
+  left: 200px;
+  top: 490px;
   width: 140px;
-  height: 15px;
+  height: 33px;
   -webkit-text-stroke: 0.20000000298023224px #000000;
 }
