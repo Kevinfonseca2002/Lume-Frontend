@@ -8,19 +8,21 @@ import { Main } from './home/pages/main/main';
 import { Chats} from './home/pages/chats/chats';
 import { Events} from './home/pages/events/events';
 import { Profile} from './home/pages/profile/profile';
-import { Groups} from './home/pages/groups/groups'
+import { Groups} from './home/pages/groups/groups';
+import { authGuard } from './guards/auth-guard';
+import { guestOnlyGuard } from './guards/guest-only-guard';
 
 const routes: Routes = [
-  {path: "", component: Home, pathMatch: "full"},
-  {path: "home", component: Home, pathMatch: "full"},
-  {path: "login", component: Login, pathMatch: "full"},
-  {path: "signup", component:Signup},
-  {path: "initialization", component: Initialization},
-  {path: "main",component:Main},
-  {path: "chats",component:Chats},
-  {path: "events",component:Events},
-  {path: "profile",component:Profile},
-  {path: "groups",component:Groups},
+  {path: "", component: Home, pathMatch: "full", canActivate:[guestOnlyGuard]},
+  {path: "home", component: Home, pathMatch: "full", canActivate:[guestOnlyGuard]},
+  {path: "login", component: Login, pathMatch: "full", canActivate:[guestOnlyGuard]},
+  {path: "signup", component:Signup, canActivate:[guestOnlyGuard]},
+  {path: "initialization", component: Initialization,canActivate: [authGuard]},
+  {path: "main",component:Main, canActivate: [authGuard]},
+  {path: "chats",component:Chats, canActivate: [authGuard]},
+  {path: "events",component:Events, canActivate: [authGuard]},
+  {path: "profile",component:Profile, canActivate: [authGuard]},
+  {path: "groups",component:Groups, canActivate: [authGuard]},
   {path: "**", redirectTo: ""}
 ];
 
