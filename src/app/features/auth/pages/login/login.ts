@@ -29,7 +29,7 @@ export class Login { //La clase es necesaria
 
   onSubmit(){ //Envia informacion, si no esta  un campo lleno, ejecuta alert
 
-  const ok = this.authService.loginMock(this.email, this.password); // Provee al constructor con la informacion que traemos con ngModel "email, password" y esta la valida con el methodo de loginMock y este returna booleano
+  const ok = this.authService.login(this.email, this.password); // Provee al constructor con la informacion que traemos con ngModel "email, password" y esta la valida con el methodo de loginMock y este returna booleano
 
   if(ok){
     this.isLoggedIn=true;

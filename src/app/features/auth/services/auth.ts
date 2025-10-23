@@ -11,14 +11,36 @@ export class AuthService {
 
   private _user = signal<{ name: String; email: String } | null>(null); // captura el user
   private _role = signal<Role | null>(null); //captura rol
+  private _exp = signal<number|null>(null);
 
   reloads = signal(0); // recargas de la pagina
   loading = signal(false); //cargando
 
   user = computed(() => this._user()); //captura solo el user
   role = computed(() => this._role()); //captura solo el rol
+  exp = computed(()=> this._exp());//captura solo la expiracion
 
   //Verifica si hay informacion de logueo en el navegador y de ser asi le da los valores especificos al rol y user
+
+  private makeFakeJWT(payload: object):string{
+    const header = btoa(JSON.stringify({ alg: "HS256", typ: "JWT"}));
+    const body = btoa(JSON.stringify(payload));
+    const sign = btoa("Lumesign")//signature token
+    return `${header}.${body}.${sign}`;
+  }
+
+  private readPayload(token: string):any|null{
+    try{
+      const parts = token.split(".");
+      if(parts.length !== 3) return null;
+      const text = atob(parts[1]);
+      return JSON.parse(text);
+    }
+    catch{
+      return null
+    }
+  }
+
   constructor() {
     const token = localStorage.getItem(this.KEY_TOKEN);
     const role = localStorage.getItem(this.KEY_ROLE) as Role | null;
@@ -41,18 +63,27 @@ export class AuthService {
     }, 1500);
   } //Mientras carga la informacion del usuario
 
-  loginMock(email: string, password: string): boolean {
+  login(email: string, password: string): boolean {
       if (!email || !password) return false
       const asStore = /store/i.test(email); //Valida que si la palabra "store" este dentro de email //la i significa que ignora mayusculas y minusculas, retorna booleano
-      const role:Role =asStore ? "store":"user"; //Trae const y si es store lo pone else ":" va a ser user.
+      const role:Role =asStore ? "store":"user"; //Trae const y si es store lo pone, else ":" va a ser user.
+
+      const exp= Math.floor(Date.now()/1000)+60*30;//Normaliza el tiempo de expiracion
+
+      const token = this.makeFakeJWT({ name: email.split("@")[0], email, role, exp}); //Guarda el payload
+
 
       localStorage.setItem(this.KEY_TOKEN, "token");
       localStorage.setItem(this.KEY_ROLE,role);
 
+
       this._user.set({name: asStore ?"Store":"User",email});
       this._role.set(role);
+      this._exp.set(exp);
       return true
-    }
+      };
+
+
 
 
   logout(): void {

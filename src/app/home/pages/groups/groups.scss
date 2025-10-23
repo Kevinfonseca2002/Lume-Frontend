@@ -1,3 +1,105 @@
+/////////////Carousel/////////
+
+
+.carousel {
+    anchor-name: --carousel;
+    border: 5px dotted red;
+    box-sizing: border-box;
+    display: flex;
+    gap: 1em;
+    margin: 3em auto;
+    overflow-x: scroll;
+    position: relative;
+    top: 600px;     /* Para que el scroll sea suave */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;  /* Implementa snapping */
+    scroll-marker-group: after;     /* Esta propiedad permite establecer un grupo de marcadores de acuerdo a la cantidad de elementos del carousel */
+
+    &::scroll-marker-group {
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::scroll-button( right ) {
+        content: '>';
+        position-area: right center;
+        translate: -50%;
+    }
+
+    &::scroll-button( left ) {
+        content: '<';
+        position-area: left center;
+        translate: 50%;
+    }
+
+    &::scroll-button( right ),
+    &::scroll-button( left ) {
+        align-items: center;
+        background-color: orange;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        font-size: 1.4em;
+        height: 2rem;
+        justify-content: center;
+        padding: .8em;
+        position: fixed;
+        position-anchor: --carousel;
+        width: 2rem;
+    }
+
+    &::scroll-button( right ):disabled,
+    &::scroll-button( left ):disabled {
+        opacity: .5;
+        cursor: auto;
+    }
+
+    /* .carousel .card */
+    .card {
+        align-content: center;
+        background: orange;
+        border-radius: .5rem;
+        border: 1px dotted blue;
+        box-sizing: border-box;
+        flex: 0 0 100%;
+        aspect-ratio: 5 / 3;
+        padding: 1em;
+        scroll-snap-align: start;   /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
+        text-align: center;
+
+        &::scroll-marker {
+            content: '';
+            width: 1em;
+            height: 1em;
+            background-color: orange;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        &::scroll-marker:target-current {
+            background-color: orangered;
+        }
+    }
+
+
+    @media ( width > 768px ) {
+        .card {
+            flex: 0 0 20em;
+            aspect-ratio: 16 / 9;
+        }
+    }
+}
+
+
+
+
+
 ////Titulos////////////////////
 
 .fondorojoN{
