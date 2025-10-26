@@ -9,7 +9,7 @@
   </div>
   <h3 class="subtitulo">Grupos Principales</h3>
 
-  <div class="cardbox">
+  <!-- <div class="cardbox">
     <div class="pipe1"></div>
     <div class="pipe2"></div>
     <div class="pipe3"></div>
@@ -29,7 +29,7 @@
     </button>
   </div>
 
-  <section class="section section-carousel">
+  <section class="section-section-carousel">
     <div class="container">
       <div class="carousel">
         <div class="card card-1">1</div>
@@ -44,4 +44,33 @@
       </div>
     </div>
   </section>
-</section>
+</section> -->
+
+  <section class="section-section-carousel">
+    <div class="container">
+      <div class="carousel" id="carousel">
+        <!-- Card 1 -->
+        <div class="card" *ngFor="let p of groups">
+          <div class="cardbox">
+            <div class="pipe1"></div>
+            <div class="pipe2"></div>
+            <div class="pipe3"></div>
+            <div class="pipe4"></div>
+            <img class="image" [src]="p.image" alt="groupimg" />
+            <div class="groupname">{{p.name}}</div>
+            <div class="city">{{p.city}}</div>
+            <button class="groupsevents">
+              📅 Eventos
+            </button>
+            <button class="messagesbutton">
+              💬 Mensajes
+            </button>
+          </div>
+        </div>
+
+
+      <!-- Indicadores -->
+      <div class="scroll-indicators" id="indicators"></div>
+    </div>
+    </div>
+  </section>

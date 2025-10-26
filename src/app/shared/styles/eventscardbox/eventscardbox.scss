@@ -1,9 +1,37 @@
+////////////////carousel/////////////
+
+.carousel{
+  margin: auto ;
+  display: flex;
+  gap: 2em;
+}
+
 .eventscard,
 .eventscard * {
   box-sizing: border-box;
+
 }
 .eventscard {
-  position: relative;
+  position:relative;
+  scroll-snap-align: start; //Alinea las cards
+  scroll-snap-stop: always; //Para en cada card
+  flex-shrink: 0;
+  min-width: 300px;
+  width: 700px;
+  scroll-marker:auto;
+
+    &::scroll-marker {
+    content: "";
+    height: 1em;
+    width: 1em;
+    background-color: #8e8c8c;
+    border: 0.5px solid black;
+    border-radius: 50%;
+  }
+
+  &::scroll-marker:target-current {
+    background-color: #000000;
+  }
 }
 .pipe1 {
   background: linear-gradient(to top, #d6a2e37d, #a2d4ff);

@@ -1,22 +1,26 @@
 /////////////Carousel/////////
-
+.section-section-carousel{
+  position:relative;
+  top: 240px;
+}
 
 .carousel {
     anchor-name: --carousel;
-    border: 5px dotted red;
     box-sizing: border-box;
     display: flex;
     gap: 1em;
     margin: 3em auto;
     overflow-x: scroll;
-    position: relative;
-    top: 600px;     /* Para que el scroll sea suave */
+    position: relative;     /* Para que el scroll sea suave */
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;  /* Implementa snapping */
     scroll-marker-group: after;     /* Esta propiedad permite establecer un grupo de marcadores de acuerdo a la cantidad de elementos del carousel */
 
     &::scroll-marker-group {
         display: flex;
+        position: absolute;
+        top: 250px;
+        left: 640px;
         justify-content: center;
         gap: .5em;
     }
@@ -26,32 +30,33 @@
     }
 
     &::scroll-button( right ) {
-        content: '>';
+        background-image:url(../../../../assets/icons/siguiente-boton.png);
         position-area: right center;
         translate: -50%;
     }
 
     &::scroll-button( left ) {
-        content: '<';
+        background-image:url(../../../../assets/icons/flechas-hacia-atras.png);
         position-area: left center;
         translate: 50%;
     }
 
     &::scroll-button( right ),
     &::scroll-button( left ) {
+        content: "";
         align-items: center;
-        background-color: orange;
+        background-color: rgb(255, 255, 255);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         border-radius: 50%;
-        color: white;
         cursor: pointer;
         display: inline-flex;
-        font-size: 1.4em;
-        height: 2rem;
+        height: 3rem;
         justify-content: center;
-        padding: .8em;
         position: fixed;
         position-anchor: --carousel;
-        width: 2rem;
+        width: 3rem;
     }
 
     &::scroll-button( right ):disabled,
@@ -62,36 +67,38 @@
 
     /* .carousel .card */
     .card {
-        align-content: center;
-        background: orange;
+        align-items: center;
         border-radius: .5rem;
-        border: 1px dotted blue;
         box-sizing: border-box;
         flex: 0 0 100%;
+        justify-content: center;
         aspect-ratio: 5 / 3;
         padding: 1em;
-        scroll-snap-align: start;   /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
+        scroll-snap-align: start;
+        /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
         text-align: center;
 
         &::scroll-marker {
             content: '';
             width: 1em;
             height: 1em;
-            background-color: orange;
+            background-color: rgb(255, 255, 255);
+            border: 0.5px solid black;
             border-radius: 50%;
             cursor: pointer;
+            margin-bottom: 50px;
         }
 
         &::scroll-marker:target-current {
-            background-color: orangered;
+            background-color: rgb(0, 0, 0);
         }
     }
 
 
     @media ( width > 768px ) {
         .card {
-            flex: 0 0 20em;
-            aspect-ratio: 16 / 9;
+            flex: 0 0 28em;
+            aspect-ratio: 19 / 9;
         }
     }
 }
@@ -144,144 +151,230 @@ h2 {
 
 
   /////Cardbox///////////////////
-.cardbox,
-.cardbox * {
-  box-sizing: border-box;
-}
-.cardbox {
-  position: relative;
-}
-.pipe1 {
-  background: #d9d9d9;
-  border-radius: 25px;
-  width: 181px;
-  height: 19px;
-  position: absolute;
-  left: 188px;
-  top: 18px;
-}
-.pipe2 {
-  background: #d9d9d9;
-  border-radius: 25px;
-  width: 181px;
-  height: 19px;
-  position: absolute;
-  left: 188px;
-  top: 44px;
-}
-.pipe3 {
-  background: #d9d9d9;
-  border-radius: 25px;
-  width: 181px;
-  height: 20px;
-  position: absolute;
-  left: 188px;
-  top: 70px;
-}
-.pipe4 {
-  background: #d9d9d9;
-  border-radius: 25px;
-  width: 181px;
-  height: 19px;
-  position: absolute;
-  left: 188px;
-  top: 97px;
-}
-.image {
-  border-radius: 4px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 0.5px;
-  width: 199px;
-  height: 133px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  object-fit: cover;
-}
-.groupname {
-  color: #000000;
-  text-align: center;
-  font-family: "RobotoCondensed-Bold", sans-serif;
-  font-size: 35px;
-  font-weight: 700;
-  position: absolute;
-  left: 203px;
-  top: 26px;
-  width: 160px;
-  height: 48px;
-}
-.city {
-  color: #000000;
-  text-align: center;
-  font-family: "ScriptMtBold-Regular", sans-serif;
-  font-size: 25px;
-  font-weight: 400;
-  position: absolute;
-  left: 203px;
-  top: 82px;
-  width: 172px;
-  height: 49px;
-}
-.messagesbutton {
-  background: #0088ff;
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 0.5px;
-  width: 107px;
-  height: 43px;
-  position: absolute;
-  left: 205px;
-  top: 144px;
-}
-.groupsevents {
-  background: #ff5a5d;
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 0.5px;
-  width: 107px;
-  height: 43px;
-  position: absolute;
-  left: 39px;
-  top: 144px;
-}
-.proximos-eventos {
-  color: #ffffff;
-  text-align: right;
-  font-family: "CooperBlack-Regular", sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  position: absolute;
-  left: 48px;
-  top: 149px;
-  width: 88px;
-  height: 15px;
-  -webkit-text-stroke: 0.20000000298023224px #000000;
-}
-.mensajes {
-  color: #ffffff;
-  text-align: right;
-  font-family: "CooperBlack-Regular", sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  position: absolute;
-  left: 216px;
-  top: 155px;
-  width: 91px;
-  height: 15px;
-  -webkit-text-stroke: 0.20000000298023224px #000000;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-button {
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  font-size: 15px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
 
-button img {
-  width: 20px;
-  height: 20px;
-  object-fit: cover}
+    .section-section-carousel {
+      position: relative;
+      margin-top: 50px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 2em;
+      margin: 3em auto;
+      overflow-x: scroll;
+      padding: 20px 10px;
+      position: relative;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .carousel::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+
+    .carousel::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    /* Estilos de las tarjetas del carousel */
+    // .card {
+    //   flex: 0 0 400px;
+    //   scroll-snap-align: start;
+    //   background: white;
+    //   border-radius: 8px;
+    //   padding: 20px;
+    //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    //   min-height: 220px;
+    // }
+
+    /* CardBox adaptado */
+    .cardbox {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .pipe1, .pipe2, .pipe3, .pipe4 {
+      background: #d9d9d9;
+      border-radius: 25px;
+      width: 230px;
+      height: 19px;
+      position: absolute;
+      left: 188px;
+    }
+
+    .pipe1 { top: 18px; }
+    .pipe2 { top: 44px; }
+    .pipe3 { top: 70px; height: 20px; }
+    .pipe4 { top: 97px; }
+
+    .image {
+      border-radius: 4px;
+      border: 0.5px solid #000000;
+      width: 199px;
+      height: 133px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+    }
+
+    .groupname {
+      color: #000000;
+      text-align: center;
+      font-family: "Arial Black", sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      position: absolute;
+      left: 225px;
+      top: 26px;
+      width: 160px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .city {
+      color: #000000;
+      text-align: center;
+      font-family: cursive;
+      font-size: 25px;
+      font-weight: 400;
+      position: absolute;
+      left: 203px;
+      top: 82px;
+      width: 172px;
+      height: 49px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .messagesbutton, .groupsevents {
+      border-radius: 30px;
+      border: 0.5px solid #000000;
+      width: 107px;
+      height: 30px;
+      position: absolute;
+      top: 144px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      gap: 5px;
+      transition: transform 0.2s;
+    }
+
+    .messagesbutton {
+      background: #0088ff;
+      left: 230px;
+    }
+
+    .groupsevents {
+      background: #ff5a5d;
+      left: 64px;
+    }
+
+    .messagesbutton:hover, .groupsevents:hover {
+      transform: scale(1.05);
+    }
+
+    .messagesbutton img, .groupsevents img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+    }
+
+    /* Botones de navegación */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      background-color: orange;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      font-size: 1.4em;
+      height: 2.5rem;
+      width: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: orangered;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Indicadores de scroll */
+    .scroll-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+      margin-top: 10px;
+    }
+
+    .indicator {
+      width: 1em;
+      height: 1em;
+      background-color: orange;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .indicator.active {
+      background-color: orangered;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex: 0 0 90%;
+      }
+
+      .cardbox {
+        transform: scale(0.85);
+        transform-origin: top left;
+      }
+    }
