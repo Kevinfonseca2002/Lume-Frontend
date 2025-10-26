@@ -10,13 +10,18 @@
     </div>
   </section>
 
-  <div class="carouseleven" *ngIf="!loading; else webLoading">
+  <!-- CAMBIO: !loading() con paréntesis -->
+  <div class="carouseleven" *ngIf="!loading(); else webLoading">
     <app-eventscardbox
       [events]="events()"
       (refresh)="reloadUser()"
     ></app-eventscardbox>
   </div>
-  <ng-template #webLoading> </ng-template>
+  <ng-template #webLoading>
+    <div class="loading-container">
+      <p>Cargando eventos...</p>
+    </div>
+  </ng-template>
   <!-- ////////////////////////// -->
 
   <section class="categories">
@@ -35,7 +40,9 @@
         todos!
       </h2>
     </div>
-    <div class="categoriescarousel" *ngIf="!loading; else loadingTemplate">
+
+    <!-- CAMBIO: !loading() con paréntesis -->
+    <div class="categoriescarousel" *ngIf="!loading(); else loadingTemplate">
       <app-categorycard
         [categories]="categories()"
         (categorySelected)="onCategorySelected($event)"
@@ -60,9 +67,20 @@
         <h2>a los tuyos</h2>
       </div>
     </div>
-    <div class="groupcard">
-      <app-newgroupscard></app-newgroupscard>
+    <div class="groupcard" *ngIf="!loading(); else groupsLoading">
+      <app-newgroupscard
+        [groups]="groups()"
+        (onEvents)="onGroupEvents($event)"
+        (onSignup)="onGroupSignup($event)"
+      ></app-newgroupscard>
     </div>
+
+    <ng-template #groupsLoading>
+      <div class="loading-container">
+        <p>Cargando grupos...</p>
+      </div>
+    </ng-template>
+
     <div class="groupstext">
       <h3>Encuentra ese espacio que te hace sentir en casa</h3>
     </div>
