@@ -1,5 +1,13 @@
-<button class="category">
-  <div class="circulo"></div>
-  <img class="icono" src="../../../../assets/icons/bola-de-disco.png" />
-  <div class="title">Vida Nocturna</div>
-</button>
+<section class="section-category-carousel">
+  <div class="container">
+    <div class="carousel" id="carousel">
+      <div class="card" *ngFor="let cat of categories()">
+        <div class="category">
+          <div class="circulo">
+          <img class="icono" [src]="cat.icon" [alt]="cat.title" /></div>
+          <div class="title">{{ cat.title }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

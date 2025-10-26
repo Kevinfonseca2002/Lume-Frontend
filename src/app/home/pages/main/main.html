@@ -35,9 +35,18 @@
         todos!
       </h2>
     </div>
-    <div class="categoriescarousel">
-      <app-categorycard></app-categorycard>
+    <div class="categoriescarousel" *ngIf="!loading; else loadingTemplate">
+      <app-categorycard
+        [categories]="categories()"
+        (categorySelected)="onCategorySelected($event)"
+      ></app-categorycard>
     </div>
+
+    <ng-template #loadingTemplate>
+      <div class="loading-container">
+        <p>Cargando categorías...</p>
+      </div>
+    </ng-template>
   </section>
 
   <!-- ////////////////////////// -->

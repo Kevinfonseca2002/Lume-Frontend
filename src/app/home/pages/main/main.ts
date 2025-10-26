@@ -2,6 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { AuthService } from '../../../features/auth/services/auth';
 
 
+interface Category {
+  icon: string;
+  title: string;
+}
+
 @Component({
   selector: 'app-main',
   standalone: false,
@@ -14,11 +19,14 @@ export class Main {
 
   loading=false
   events=signal<{image: string; fecha: string; name: string}[]>([]);
+  categories = signal<Category[]>([]);
 
   ngOnInit(){
-    this.eventsInfo()
+    this.eventsInfo();
+    this.loadCategories();
   }
 
+  ////////////////////EVENTS/////////////////////
   eventsInfo(){
 
     setTimeout(()=>{
@@ -37,11 +45,43 @@ export class Main {
     },1500)
   }
 
+//////////////////////////CATEGORIES///////////////////////////////
+
+
+  loadCategories() {
+    this.loading=true;
+
+    setTimeout(() => {
+      this.categories.set([
+        { icon: '../../../../assets/icons/bola-de-disco.png', title: 'Vida Nocturna' },
+        { icon: 'assets/icons/musica.png', title: 'Música' },
+        { icon: '../../../../assets/icons/pesa.png', title: 'Deportes' },
+        { icon: '../../../../assets/icons/comer.png', title: 'Gastronomía' },
+        { icon: '../../../../assets/icons/teatro.png', title: 'Arte y Cultura' },
+        { icon: '../../../../assets/icons/playa.png', title: 'Vacaciones' }
+      ]);
+      this.loading=false;
+    }, 1000);
+  }
+
+  onCategorySelected(category: Category) {
+    console.log('Categoría seleccionada:', category);
+    // Aquí puedes manejar la lógica cuando se selecciona una categoría
+  }
+
+  reloadCategories() {
+    console.log('Recargando categorías...');
+    this.loadCategories();
+  }
+
 
     reloadUser() {
     this.auth.loadUser();
   }
-
-
-
 }
+
+
+
+
+
+

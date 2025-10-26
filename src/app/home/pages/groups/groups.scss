@@ -1,107 +1,107 @@
 /////////////Carousel/////////
-.section-section-carousel{
-  position:relative;
-  top: 240px;
-}
+  .section-section-carousel{
+    position:relative;
+    top: 240px;
+  }
 
-.carousel {
-    anchor-name: --carousel;
-    box-sizing: border-box;
-    display: flex;
-    gap: 1em;
-    margin: 3em auto;
-    overflow-x: scroll;
-    position: relative;     /* Para que el scroll sea suave */
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;  /* Implementa snapping */
-    scroll-marker-group: after;     /* Esta propiedad permite establecer un grupo de marcadores de acuerdo a la cantidad de elementos del carousel */
+  .carousel {
+      anchor-name: --carousel;
+      box-sizing: border-box;
+      display: flex;
+      gap: 1em;
+      margin: 3em auto;
+      overflow-x: scroll;
+      position: relative;     /* Para que el scroll sea suave */
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;  /* Implementa snapping */
+      scroll-marker-group: after;     /* Esta propiedad permite establecer un grupo de marcadores de acuerdo a la cantidad de elementos del carousel */
 
-    &::scroll-marker-group {
-        display: flex;
-        position: absolute;
-        top: 250px;
-        left: 640px;
-        justify-content: center;
-        gap: .5em;
-    }
+      &::scroll-marker-group {
+          display: flex;
+          position: absolute;
+          top: 250px;
+          left: 640px;
+          justify-content: center;
+          gap: .5em;
+      }
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+      &::-webkit-scrollbar {
+          display: none;
+      }
 
-    &::scroll-button( right ) {
-        background-image:url(../../../../assets/icons/siguiente-boton.png);
-        position-area: right center;
-        translate: -50%;
-    }
+      &::scroll-button( right ) {
+          background-image:url(../../../../assets/icons/siguiente-boton.png);
+          position-area: right center;
+          translate: -50%;
+      }
 
-    &::scroll-button( left ) {
-        background-image:url(../../../../assets/icons/flechas-hacia-atras.png);
-        position-area: left center;
-        translate: 50%;
-    }
+      &::scroll-button( left ) {
+          background-image:url(../../../../assets/icons/flechas-hacia-atras.png);
+          position-area: left center;
+          translate: 50%;
+      }
 
-    &::scroll-button( right ),
-    &::scroll-button( left ) {
-        content: "";
-        align-items: center;
-        background-color: rgb(255, 255, 255);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 50%;
-        cursor: pointer;
-        display: inline-flex;
-        height: 3rem;
-        justify-content: center;
-        position: fixed;
-        position-anchor: --carousel;
-        width: 3rem;
-    }
+      &::scroll-button( right ),
+      &::scroll-button( left ) {
+          content: "";
+          align-items: center;
+          background-color: rgb(255, 255, 255);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-radius: 50%;
+          cursor: pointer;
+          display: inline-flex;
+          height: 3rem;
+          justify-content: center;
+          position: fixed;
+          position-anchor: --carousel;
+          width: 3rem;
+      }
 
-    &::scroll-button( right ):disabled,
-    &::scroll-button( left ):disabled {
-        opacity: .5;
-        cursor: auto;
-    }
+      &::scroll-button( right ):disabled,
+      &::scroll-button( left ):disabled {
+          opacity: .5;
+          cursor: auto;
+      }
 
-    /* .carousel .card */
-    .card {
-        align-items: center;
-        border-radius: .5rem;
-        box-sizing: border-box;
-        flex: 0 0 100%;
-        justify-content: center;
-        aspect-ratio: 5 / 3;
-        padding: 1em;
-        scroll-snap-align: start;
-        /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
-        text-align: center;
+      /* .carousel .card */
+      .card {
+          align-items: center;
+          border-radius: .5rem;
+          box-sizing: border-box;
+          flex: 0 0 100%;
+          justify-content: center;
+          aspect-ratio: 5 / 3;
+          padding: 1em;
+          scroll-snap-align: start;
+          /* Asegura que el snapping se aplique al inicio de cada elemento del carousel, es decir: que el borde izquiero de cada elemento se alinie con el lado izquierdo del carousel */
+          text-align: center;
 
-        &::scroll-marker {
-            content: '';
-            width: 1em;
-            height: 1em;
-            background-color: rgb(255, 255, 255);
-            border: 0.5px solid black;
-            border-radius: 50%;
-            cursor: pointer;
-            margin-bottom: 50px;
-        }
+          &::scroll-marker {
+              content: '';
+              width: 1em;
+              height: 1em;
+              background-color: rgb(255, 255, 255);
+              border: 0.5px solid black;
+              border-radius: 50%;
+              cursor: pointer;
+              margin-bottom: 50px;
+          }
 
-        &::scroll-marker:target-current {
-            background-color: rgb(0, 0, 0);
-        }
-    }
+          &::scroll-marker:target-current {
+              background-color: rgb(0, 0, 0);
+          }
+      }
 
 
-    @media ( width > 768px ) {
-        .card {
-            flex: 0 0 28em;
-            aspect-ratio: 19 / 9;
-        }
-    }
-}
+      @media ( width > 768px ) {
+          .card {
+              flex: 0 0 28em;
+              aspect-ratio: 19 / 9;
+          }
+      }
+  }
 
 
 

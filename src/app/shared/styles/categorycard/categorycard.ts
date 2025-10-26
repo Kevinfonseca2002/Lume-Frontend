@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,input,output } from '@angular/core';
+
+interface Category {
+  icon: string;
+  title: string;}
 
 @Component({
   selector: 'app-categorycard',
@@ -7,5 +11,10 @@ import { Component } from '@angular/core';
   styleUrl: './categorycard.scss'
 })
 export class Categorycard {
+
+
+  categories = input<Category[]>([]);
+  categorySelected = output<Category>();
+
 
 }

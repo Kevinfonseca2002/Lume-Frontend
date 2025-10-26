@@ -1,7 +1,4 @@
-body {
-  height: 100vh;
-  width: 100vw
-}
+
 
 //TITULO Y BOXES
   ///////////////////////EVENTOS//////////////////
@@ -111,7 +108,7 @@ h2 {
     justify-content: center;
     gap: 0.5em;
     position: absolute;
-    bottom: 200px;
+    bottom: 100px;
     right: 425px;
     margin-top: 1rem;
 
@@ -170,12 +167,28 @@ h2 {
 
 ////////categories///////////
 
-  .categoriescarousel{
-    position: absolute;
-    top: 1350px;
-    width: 100%;
-    height: 370px;
+.categoriescarousel {
+  text-align: center;
+  position: relative;
+  top: 910px;
+  width: 100%;
+  height: 520px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 1.2rem;
+  color: #666;
+}
 
 
   ////////mapa///////
