@@ -1,22 +1,42 @@
-<div class="newgroup">
-  <div class="pipe1"></div>
-  <div class="pipe2"></div>
-  <div class="pipe3"></div>
-  <div class="pipe4"></div>
-  <div class="pipe5"></div>
-  <div class="pipe6"></div>
-  <div class="pipe7"></div>
-  <div class="image">
-  <img src="../../../../assets/images/Running.jpg" alt="Running"/>
-  </div>
-  <div class="descripcion">
-    Queremos que nuestros miembros sean personas activas y con muchas ganas de
-    recorrer el mundo a pie!
-  </div>
-  <button class="eventsbutton"><div class="buttontext">Eventos</div></button>
-  <button class="signupbutton"><div class="buttontext">Entrar</div></button>
+<section class="section-groups-carousel">
+  <div class="container">
+    <div class="carousel" id="carousel">
+      <div class="card" *ngFor="let group of groups()">
+        <div class="newgroup">
+          <div class="pipe1"></div>
+          <div class="pipe2"></div>
+          <div class="pipe3"></div>
+          <div class="pipe4"></div>
+          <div class="pipe5"></div>
+          <div class="pipe6"></div>
+          <div class="pipe7"></div>
 
-  <div class="groupname"><h2>Running por el mundo</h2></div>
-  <div class="ciudad"><h3>Bogota</h3></div>
-</div>
+          <div class="image">
+            <img [src]="group.image" [alt]="group.name"/>
+          </div>
+
+          <div class="groupname">
+            <h2>{{ group.name }}</h2>
+          </div>
+
+          <div class="ciudad">
+            <h3>{{ group.city }}</h3>
+          </div>
+
+          <div class="descripcion">
+            {{ group.description }}
+          </div>
+
+          <button class="eventsbutton" >
+            <div class="buttontext">Eventos</div>
+          </button>
+
+          <button class="signupbutton">
+            <div class="buttontext">Entrar</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 

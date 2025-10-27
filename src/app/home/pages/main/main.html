@@ -38,7 +38,6 @@
     <div class="categoriescarousel" *ngIf="!loading; else loadingTemplate">
       <app-categorycard
         [categories]="categories()"
-        (categorySelected)="onCategorySelected($event)"
       ></app-categorycard>
     </div>
 

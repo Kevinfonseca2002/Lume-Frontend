@@ -23,7 +23,7 @@ export class Main {
 
   ngOnInit(){
     this.eventsInfo();
-    this.loadCategories();
+    // this.loadCategories();
   }
 
   ////////////////////EVENTS/////////////////////
@@ -62,16 +62,6 @@ export class Main {
       ]);
       this.loading=false;
     }, 1000);
-  }
-
-  onCategorySelected(category: Category) {
-    console.log('Categoría seleccionada:', category);
-    // Aquí puedes manejar la lógica cuando se selecciona una categoría
-  }
-
-  reloadCategories() {
-    console.log('Recargando categorías...');
-    this.loadCategories();
   }
 
 

@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, input, output, Signal } from '@angular/core';
+
+interface Groups{
+  name:string,
+  image:string,
+  city:string,
+  description:string
+}
 
 @Component({
   selector: 'app-newgroupscard',
@@ -7,5 +14,9 @@ import { Component } from '@angular/core';
   styleUrl: './newgroupscard.scss'
 })
 export class Newgroupscard {
+
+  groups=input<[{name: string; image:string; city:string; description:string}]>()
+
+  refresh=output<void>()
 
 }
