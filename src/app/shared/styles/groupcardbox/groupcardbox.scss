@@ -6,6 +6,11 @@
 }
 .group {
   position: relative;
+  min-width: 490px;
+  width: 700px;
+  height: 300px;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
 }
 .linea1 {
   border-radius: 5px;
@@ -66,4 +71,67 @@
   top: 112px;
   width: 234px;
   height: 93px;
+}
+//Carousel
+
+.carousel{
+  margin-top: 30px;
+  position: absolute;
+  margin-left: 130px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 85%;
+  gap: 4em;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  anchor-name: --carousel;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+  &::scroll-button( left ) {
+  content: "";
+  background-image: url(../../../../assets/icons/flechas-hacia-atras.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --carousel;
+  position-area: left center;
+  margin-bottom: 95px;
+} ;
+
+  &::scroll-button( right ){
+  content: "";
+  background-image: url(../../../../assets/icons/siguiente-boton.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --carousel;
+  position-area: right center;
+  margin-bottom: 95px;
+}
+
+&::scroll-button( left ):disabled, ::scroll-button( right ):disabled{
+  opacity: 0.5;
+  cursor: auto;
+}
+
+
 }

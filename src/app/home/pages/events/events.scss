@@ -210,4 +210,9 @@ h2 {
   width: 140px;
   height: 33px;
   -webkit-text-stroke: 0.20000000298023224px #000000;
+  transition: 0.2s ease;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 }

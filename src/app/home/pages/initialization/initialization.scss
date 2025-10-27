@@ -87,7 +87,7 @@
 
 .aboutyou-box {
   width: 50%;
-  height: 280px;
+  height: 310px;
   border-radius: 15px;
   background-color: #A2D4FF;
   padding-left: 40px;
@@ -167,6 +167,11 @@ button {
   color: black;
   margin-top: 30px;
   margin-bottom: 30px;
+  transition: 0.2s ease;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 
 }
 

@@ -91,6 +91,11 @@ background: linear-gradient(to left, #a2d4ff, #a2d4ff),
   position: absolute;
   left: 0px;
   top: 0px;
+  transition: 0.2s ease;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 
 }
 .photocontainer img {

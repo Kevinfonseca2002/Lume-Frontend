@@ -23,7 +23,7 @@ export class Main {
 
   ngOnInit(){
     this.eventsInfo();
-    // this.loadCategories();
+    this.loadCategories();
   }
 
   ////////////////////EVENTS/////////////////////

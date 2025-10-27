@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Login } from './login/login';
 import { FormsModule } from '@angular/forms';
 import { Signup } from './signup/signup';
+import { AppRoutingModule } from "../../../app-routing-module";
 
 
 
@@ -10,7 +11,8 @@ import { Signup } from './signup/signup';
   declarations: [Login, Signup],
   imports: [
     CommonModule,
-    FormsModule
-  ]
+    FormsModule,
+    AppRoutingModule
+]
 })
 export class PagesModule { }
