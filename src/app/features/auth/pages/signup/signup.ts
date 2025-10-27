@@ -10,25 +10,40 @@ import { Router } from '@angular/router';
 })
 export class Signup {
 
-  constructor(private authService: AuthService, private router: Router){}
+  step: "choose"|"user"|"store"="choose"
 
   name="";
   address="";
   email="";
   password="";
-  storeOrUser="";
+  nit="";
 
-  onSubmit(){
+  loading=false;
 
-    const ok =this.authService.signUpChecker(this.name, this.address, this.email, this.password, this.storeOrUser)
+    constructor(private authService: AuthService, private router: Router){}
 
-    if(ok){
-      this.router.navigate(["/main"])
-    }
-    else{
-      alert("Fill up every empty field")
-    }
-  }
+select(type:"user"|"store"){
+  this.step=type
+}
+
+submitUser(){
+  if(!this.name|| !this.address || !this.email || !this.password )return alert ("Blankspaces must be all filled up");
+
+  this.loading=true;
+
+  const ok = this.authService.register({name: this.name, address: this.address, email:this.email, password: this.password, type:"user"});
+
+  setTimeout(()=>{ this.loading=false;ok ?  this.router.navigate(["/main"]):alert("Unexpected error when signing up")},1000)
+
+}
+
+submitStore(){
+  if( !this.email || !this.password || !this.nit) return alert ("Blankspaces must be all filled up.");
+  this.loading=true;
+  const ok = this.authService.register({name: this.name, address: this.address, email:this.email, password: this.password, type:"store"});
+
+  setTimeout(() => { this.loading = false; ok ? this.router.navigate(['/main']) : alert('Unexpected error when signing up'); }, 1000);
+}
 
 
 

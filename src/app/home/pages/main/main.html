@@ -13,7 +13,6 @@
   <div class="carouseleven" *ngIf="!loading; else webLoading">
     <app-eventscardbox
       [events]="events()"
-      (refresh)="reloadUser()"
     ></app-eventscardbox>
   </div>
   <ng-template #webLoading> </ng-template>

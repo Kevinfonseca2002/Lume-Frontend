@@ -8,7 +8,7 @@
       <h1>Login</h1>
 
 
-      <form *ngIf="!isLoggedIn; else loading" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <form *ngIf="!loading; else loading" (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <div class="form-group">
           <label for="email">Email</label>
           <input

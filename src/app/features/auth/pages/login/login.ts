@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({// El metodo Component o NGModule naturalmente detecta que tiene que trabajar de la mano con la class
   selector: 'app-login', //Selector del componente de login
@@ -12,35 +13,26 @@ export class Login { //La clase es necesaria
 
   email= ""; //Parametro de la clase
   password="";//Parametro de la clase
-  isLoggedIn=false;
+  loading=false;
 
   constructor( //injecta cosas fuera de la clase, que fue importado.
     private router: Router,
-    private authService:AuthService
+    private auth:AuthService
   ){}
 
-  ngOnInit(){
-    const loggedIn = this.authService.isLoggedIn();
-    if(loggedIn){
-      this.isLoggedIn=true;
-      this.router.navigate(["/main"]);
-    }
-  }//Cuando el componente se inicia, ejecuta esto
-
   onSubmit(){ //Envia informacion, si no esta  un campo lleno, ejecuta alert
-
-  const ok = this.authService.login(this.email, this.password); // Provee al constructor con la informacion que traemos con ngModel "email, password" y esta la valida con el methodo de loginMock y este returna booleano
-
-  if(ok){
-    this.isLoggedIn=true;
-    this.router.navigate(["/main"]); //
-  }else{
-    alert("Credenciales invalidas")
-  }
+    if(!this.email|| !this.password) return alert(
+      "Blankspaces must be all filled up"
+    )
+    this.loading=true;
+    const ok= this.auth.login(this.email, this.password);
+    setTimeout(()=>{
+      this.loading=false;
+      ok ? this.router.navigate(["/main"]):alert("Wrong Credentials")
+    },1200);
   }
   logout(){ //Falta boton de logout en el html
-    this.authService.logout();
-    this.isLoggedIn=false
+    this.auth.logout();
   }
 
 }

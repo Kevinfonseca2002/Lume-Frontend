@@ -53,16 +53,6 @@ export class AuthService {
 
   //////LOGIN/////////////////////
 
-  loadUser() {
-    this.loading.set(true);
-
-    setTimeout(() => {
-      this._user.set({ name: 'Alek Segura', email: 'alek@test.dev' });
-      this.reloads.update((v) => v + 1);
-      this.loading.set(false);
-    }, 1500);
-  } //Mientras carga la informacion del usuario
-
   login(email: string, password: string): boolean {
       if (!email || !password) return false
       const asStore = /store/i.test(email); //Valida que si la palabra "store" este dentro de email //la i significa que ignora mayusculas y minusculas, retorna booleano
@@ -83,44 +73,54 @@ export class AuthService {
       return true
       };
 
+///////////////////REGISTER/////////////////////
 
+register(data: { name: string; address:string; email: string; password: string; type: Role }): boolean {
+    if (!data.name || !data.email || !data.password) return false;
+    const exp = Math.floor(Date.now() / 1000) + 60 * 30;
+    const token = this.makeFakeJWT({ name: data.name, email: data.email, role: data.type, exp });
+    localStorage.setItem(this.KEY_TOKEN, token);
+    localStorage.setItem(this.KEY_ROLE, data.type);
+    this._user.set({ name: data.name, email: data.email });
+    this._role.set(data.type);
+    this._exp.set(exp);
+    return true;
+  }
 
+  getToken():string | null {
+    return localStorage.getItem(this.KEY_TOKEN)
+  }
 
-  logout(): void {
-    localStorage.removeItem(this.KEY_ROLE);
-    localStorage.removeItem(this.KEY_TOKEN);
-    this._user.set(null);
-    this._role.set(null)
-    //No necesita un tipo de dato porque no va hacer un return, simplemente borra el token del local storage
+  getDecoded():any|null{
+    const t = this.getToken();
+    return t ? this.readPayload(t):null
+
   }
 
   isLoggedIn(): boolean {
-    const validSession = !!localStorage.getItem(this.KEY_TOKEN);
-    console.log('isLoggedIn: ', validSession);
-    return validSession;
+    const d = this.getDecoded();
+    if(!d) return false;
 
-    //Esta logeado? va y mira en el local storage si esta el token, si si, esta logeado, si no, not logged in y depende de la expiracion del token
+    if(typeof d.exp === "number" && d.exp *1000<Date.now()){
+      this.logout();
+      return false;
+    }
+    return true
   }
 
   isStore(): boolean {
     return this._role() === 'store';
   }
 
+  logout(): void {
+    localStorage.removeItem(this.KEY_ROLE);
+    localStorage.removeItem(this.KEY_TOKEN);
+    this._user.set(null);
+    this._role.set(null);
+    this._exp.set(null)
+    //No necesita un tipo de dato porque no va hacer un return, simplemente borra el token del local storage
+  }
+
   ///////////SIGNUP/////////////////////////
 
-  signUpChecker(
-    name: string,
-    address: string,
-    email: string,
-    password: string,
-    storeOrUser: string
-  ): boolean {
-    const creation =
-      !!name && !!address && !!email && !!password && !!storeOrUser;
-
-    if (creation) {
-      localStorage.setItem(this.KEY_TOKEN, 'token');
-    }
-    return creation;
-  }
 }

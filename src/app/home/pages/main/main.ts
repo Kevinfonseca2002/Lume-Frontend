@@ -63,11 +63,6 @@ export class Main {
       this.loading=false;
     }, 1000);
   }
-
-
-    reloadUser() {
-    this.auth.loadUser();
-  }
 }
 
 

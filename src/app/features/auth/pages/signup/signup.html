@@ -7,78 +7,134 @@
     <div class="login-card">
       <h1>Registrate</h1>
 
-      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+      <div class="optionstoregister" *ngIf="step === 'choose'; else forms">
+        <div class="options">
+          <button (click)="select('user')">Usuario</button>
+          <button (click)="select('store')">Tienda</button>
+        </div>
+      </div>
 
-        <div class="form-group">
-          <label for="name">Nombre</label>
-          <input
-          id="name"
-          name="name"
-          type="name"
-          [(ngModel)]="name"
-          required
-          />
+      <ng-template #forms>
+        <div class="userform" *ngIf="step === 'user'; else storeform">
+        <form (ngSubmit)="submitUser()" #signupForm="ngForm">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input
+              id="name"
+              name="name"
+              type="name"
+              [(ngModel)]="name"
+              required
+            />
           </div>
 
           <div class="form-group">
             <label for="address">Direccion</label>
             <input
-            id="address"
-            name="address"
-            type="address"
-            [(ngModel)]="address"
-            required
+              id="address"
+              name="address"
+              type="address"
+              [(ngModel)]="address"
+              required
             />
           </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-          id="email"
-          name="email"
-          type="email"
-          [(ngModel)]="email"
-          required
-          placeholder="example@mail.com"
-          /></div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              [(ngModel)]="email"
+              required
+              placeholder="example@mail.com"
+            />
+          </div>
 
           <div class="form-group">
             <label for="password">Password</label>
             <input
-            id="password"
-            name="password"
-            type="password"
-            [(ngModel)]="password"
-            required
+              id="password"
+              name="password"
+              type="password"
+              [(ngModel)]="password"
+              required
             />
-
-            <div class="form-group">
-              <label for="storeoruser">Eres Tienda o Persona</label>
-              <select
-              id="select"
-              name="select"
-              [(ngModel)]="storeOrUser">
-            <option value="">Persona</option>
-            <option value="">Tienda</option>
-
-
-            </select>
-
-            </div>
-
           </div>
 
           <div class="button-box">
-
-            <button type="submit" [disabled]="signupForm.invalid"><p>Continue</p></button>
-
+            <button type="submit" [disabled]="signupForm.invalid">
+              <p>Continue</p>
+            </button>
           </div>
+        </form>
+        </div>
 
+        <ng-template #storeform>
+            <form (ngSubmit)="submitUser()" #signupFormStores="ngForm">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="name"
+                  [(ngModel)]="name"
+                  required
+                />
+              </div>
 
+              <div class="form-group">
+                <label for="address">Direccion</label>
+                <input
+                  id="address"
+                  name="address"
+                  type="address"
+                  [(ngModel)]="address"
+                  required
+                />
+              </div>
 
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  [(ngModel)]="email"
+                  required
+                  placeholder="example@mail.com"
+                />
+              </div>
 
-      </form>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  [(ngModel)]="password"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="nit">NIT</label>
+                <input
+                  id="nit"
+                  name="nit"
+                  type="nit"
+                  [(ngModel)]="nit"
+                  required
+                />
+              </div>
+              <div class="button-box">
+                <button type="submit" [disabled]="signupFormStores.invalid">
+                  <p>Continue</p>
+                </button>
+              </div>
+            </form>
+        </ng-template>
+      </ng-template>
+    </div>
   </div>
-
-
-
+</body>
